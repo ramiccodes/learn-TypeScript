@@ -53,3 +53,14 @@ console.log(typeof number1)
 // JS only knows a limited amount of types, compared to TS
 
 // TS types are in all lowercase like string or number (not String or Number)
+
+
+// Working with Numbers, Strings & Booleans
+function addBoolean(n1: number, n2: number, showResult: boolean){
+  if (showResult) {
+    console.log(n1 + n2)
+  }
+  console.log("nope")
+}
+
+addBoolean(9, 10, false)
