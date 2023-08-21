@@ -64,3 +64,20 @@ function addBoolean(n1: number, n2: number, showResult: boolean){
 }
 
 addBoolean(9, 10, false)
+
+// The ": number, : boolean" in the above function is called a Type Assignment, where you assign a variable or parameter a type
+// They're called Explicit Type Assignments, only understood by TS
+
+// Type Inference:
+// TS does its best to understand which type you have in a certain variable or constant
+const number = 1;
+// TS understands that the code above is of a number type, because you initialize it with a number
+// Using the keyword const makes it so that TS asserts it a number type with a value of 5
+// If a let keyword was used instead, it would only assert it to be a number type, since a variable declared with let can be mutated
+// We don't have to do type assignments when declaring variables like you would an argument since it uses Type Inference
+
+// The only scenario where it would be useful is declaring a variable but not initializing it with a value:
+let unassignedVariable: string;
+// By the time that you assign this variable a value, it then asserts what kind of value
+unassignedVariable = 'hullo';
+// The main job of TypeScript is to check types and yell at us if we're using them incorrectly
