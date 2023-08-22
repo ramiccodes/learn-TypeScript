@@ -84,3 +84,37 @@ for (let hobby of arrayPerson.hobbies) {
 
 // TS inferred that hobby is a string type, this is why the method .toUpperCase() 
 // can be used without TS complaining
+
+
+// Tuple type
+// Other programming languages have tuples, but JS doesn't
+// An example of a tuple would be: [1,2]
+// It looks like an array, and it is. But it's a FIXED LENGTH ARRAY and also FIXED TYPE (Added by TypeScript)
+
+const tuplePerson: {
+  name: string,
+  age: number,
+  role: [number, string]
+} = {
+  name: 'Bobby',
+  age: 20,
+  role: [2, "author"]
+}
+
+// TS infers role as (string | number)[]
+// TS thinks that we have an array which might hold strings or numbers 
+// This is called a Union-Type, and will be saved for later
+// The downside with role is that you can use method that mutate the values because it is a union type
+// But we want the exact structure of [2, "author"] (two elements, first element: number, second element: string)
+// For this purpose, a tuple would be perfect
+// The specify typing format of "role: [number, string]" is how you would make a tuple type
+// So if you try to put another value instead of the specified type in the order like:
+// role: ['hello', 2]
+// This would throw out an error
+// Or if you try and make tuple with the wrong amount:
+// role: [2, "author", "tolkien"] (3 items in the tuple instead of 2)
+
+// When working with an array that you already know the specific length and types of values in it,
+// you might want to consider a tuple, to get more strictness in your app to be even clearer about
+// the type of data you're working with and the type of data you're expecting
+
