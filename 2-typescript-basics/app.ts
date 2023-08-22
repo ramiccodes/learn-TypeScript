@@ -58,3 +58,29 @@ const inferPerson = {
 //   }
 // }
 // So you have an object type in an object type so to say.
+
+
+
+// TypeScript Arrays
+const arrayPerson = {
+  name: 'Jessie',
+  age: 23,
+  hobbies: ['Football', "Parasailing"]
+}
+
+// hobbies' TS inferred type is string[]
+
+let activities: string[];
+activities = ['Sports']
+// If you put something other than an array in a string[] type, you will get an error
+
+// If you want to support a mixed array, use any[]
+let randomValuesArray: any[];
+// any[] is flexible but you'd be giving up all the benefits of TypeScript
+
+for (let hobby of arrayPerson.hobbies) {
+  console.log(hobby.toUpperCase());
+}
+
+// TS inferred that hobby is a string type, this is why the method .toUpperCase() 
+// can be used without TS complaining
