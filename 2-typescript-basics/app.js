@@ -20,3 +20,17 @@ function combineUnion(input1, input2) {
     return result;
 }
 console.log(combinedNames);
+// Literal Types
+function combineLiteral(input1, input2, resultConversion // Union Type combined with Literal Type
+) {
+    var result;
+    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+}
+console.log(combinedNames);
+console.log(combineLiteral('5', '5', 'as-number'));

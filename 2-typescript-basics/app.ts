@@ -25,3 +25,26 @@ function combineUnion(input1: number | string, input2: number | string){
 }
 
 console.log(combinedNames);
+
+
+// Literal Types
+function combineLiteral(
+  input1: number | string,
+  input2: number | string,
+  resultConversion: 'as-number' | 'as-string' // Union Type combined with Literal Type
+) {
+  let result;
+  if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
+    result = +input1 + +input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+  return result;
+}
+
+console.log(combinedNames);
+
+console.log(combineLiteral('5','5', 'as-number'))
+
+// We want a string for result conversion, but it has to be one of these two values 'as-number', 'as-string', other strings are not allowed
+// This is the idea of the Literal Type
