@@ -118,3 +118,24 @@ const tuplePerson: {
 // you might want to consider a tuple, to get more strictness in your app to be even clearer about
 // the type of data you're working with and the type of data you're expecting
 
+
+// Working with enums
+// Enum example:
+// enum{NEW, OLD}
+// Added by TypeScript: Automatically enumerated global constant identifiers 
+
+// We create an enum with the 'enum' keyword
+// Convention to capitalize first letter 
+enum Role {ADMIN, READ_ONLY, AUTHOR};
+
+const enumPerson = {
+  name: 'Adam',
+  age: 24,
+  role: Role.ADMIN
+}
+
+if (enumPerson.role === Role.ADMIN) {
+  console.log('is admin')
+} else if (enumPerson.role === Role.AUTHOR) {
+  console.log('is author')
+}
