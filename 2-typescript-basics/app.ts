@@ -139,3 +139,12 @@ if (enumPerson.role === Role.ADMIN) {
 } else if (enumPerson.role === Role.AUTHOR) {
   console.log('is author')
 }
+
+// The "any" type
+// Any example:
+// *
+// Any kind of value, no specific type assignment
+let upToYou: any[]; // an array with any values
+// Using 'any' is a big disadvantage and you absolutely want to avoid whenever possible
+// This is because 'any' takes away all of TS's advantages, it doesn't let TS check anything
+// If you have a chance of knowing which kind of data you're working with, be explicit about it.
