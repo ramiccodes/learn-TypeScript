@@ -1,36 +1,9 @@
-// Union Type
-// The combine function should work with both number and strings
-function combine(input1, input2) {
-    var result = input1 + input2;
-    return result;
+// Functions
+function add(n1, n2) {
+    return n1 + n2;
 }
-var combinedAges = combine(30, 26);
-console.log(combinedAges);
-var combinedNames = combineUnion('Max', 'Anna'); // This would error out given that you're combining strings
-// A union type can help us by letting us tell TS that we are fine with either number or string
-// We can do this by using a "|" symbol, letting us put as many types as we need 
-function combineUnion(input1, input2) {
-    var result;
-    if (typeof input1 === 'number' && typeof input2 === 'number') {
-        result = input1 + input2;
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+// We can explicitly assign a return type by adding a colon after the paramters and the name of the type
+function printResult(num) {
+    console.log('The result is: ' + num);
 }
-console.log(combinedNames);
-// Literal Types
-function combineLiteral(input1, input2, resultConversion // Union Type combined with Literal Type
-) {
-    var result;
-    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
-        result = +input1 + +input2;
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
-}
-console.log(combinedNames);
-console.log(combineLiteral('5', '5', 'as-number'));
+printResult(add(9, 10));
