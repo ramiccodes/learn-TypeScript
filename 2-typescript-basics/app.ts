@@ -8,3 +8,13 @@ let userName: string;
 if (typeof userInput === 'string') {
   userName = userInput;
 }
+
+// The 'never' type
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code};
+}
+
+generateError('An error ocurred!', 500)
+
+// this generateError function will be of the 'never' type as a return value because it NEVER returns anything because when throwing
+// an error, this crashes the program, stopping the execution of the code
