@@ -10,3 +10,23 @@ tsc --init (to make directory managed by TypeScript) (Creates a tsconfig.json fi
 tsc (This compiles all of the .ts files in the directory)
 
 tsc -w or tsc --watch (This will run watch mode with all of the .ts files and auto recompiles)
+
+- Top exclude a file from compilation
+Go to tsconfig.json and add a new key value pair after the first curly bracket and comma named "exclude": []
+Inside the array, you can add the name of the file
+"exclude": [
+  (If you want to exclude all files with a certain extension)
+  "analytics.dev.ts",
+
+  "*.dev.ts",
+
+  (If you want to exclude all files with this extension pattern in any folder will be ignored)
+  "**/*.dev.ts",
+
+  (node_modules is automatically excluded if "exclude" is not specified)
+  "node_modules",
+],
+
+"files": [
+  "app.ts",
+],
