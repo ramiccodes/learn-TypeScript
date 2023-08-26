@@ -37,3 +37,13 @@ console.log(combineValuesFunction(combineValues(5, 5)));
 // The problem comes with function with multiple parameters, however
 // To make it more precise, we must make a function type to specify the return type of the function and the number of parameters
 let combineValuesTypes: (a:number, b: number) => number;
+
+// Explicitly setting the return value of the callback parameter to void means that we don't care about the return value if it's not being used
+function addAndHandle(n1:number, n2:number, cb: (num: number) => void) {
+  const result = n1 + n2;
+  cb(result);
+}
+
+addAndHandle(10, 20, (result) => {
+  console.log(result);
+})
